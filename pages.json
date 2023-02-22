@@ -5,12 +5,19 @@
 		"path": "pages/shop/shop"
 	}, {
 		"path": "pages/other/other"
+	}, {
+		"path": "pages/web/web",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
 	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "惠生活",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8",
+		"navigationBarBackgroundColor": "#ff5500",
+		"backgroundColor": "#ff5500",
 		"app-plus": {
 			"background": "#efeff4"
 		}
@@ -24,14 +31,14 @@
 		}, {
 			"pagePath": "pages/shop/shop",
 			"text": "商城",
-			"iconPath": "static/tabbar/fuli.png",
-			"selectedIconPath": "static/tabbar/fuli_fill.png"
+			"iconPath": "static/tabbar/shopping.png",
+			"selectedIconPath": "static/tabbar/shopping_fill.png"
 		}, {
 			"pagePath": "pages/other/other",
 			"text": "我的",
 			"iconPath": "static/tabbar/user.png",
 			"selectedIconPath": "static/tabbar/user_fill.png"
 		}],
-		"selectedColor": "#ffad00"
+		"selectedColor": "#ff5500"
 	}
 }
