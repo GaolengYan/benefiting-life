@@ -2,7 +2,11 @@
 	"pages": [{
 		"path": "pages/home/home"
 	}, {
-		"path": "pages/shop/shop"
+		"path": "pages/shop/shop",
+		"style": {
+			"enablePullDownRefresh": true,
+			"onReachBottomDistance": 100
+		}
 	}, {
 		"path": "pages/other/other"
 	}, {
@@ -12,7 +16,16 @@
 			"enablePullDownRefresh": false
 		}
 
-	}],
+	}    ,{
+            "path" : "pages/shop_detail/shop_detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "惠生活",

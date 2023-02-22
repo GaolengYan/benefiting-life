@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<view data-ref="coupon" class="coupon vue-ref">
-			<block v-for="(item, index) in coupons">
+			<block v-for="(item, index) in coupons" :key="index">
 				<view @click="toCoupon(index)" class="item">
 					<view class="top">
 						<view class="left">

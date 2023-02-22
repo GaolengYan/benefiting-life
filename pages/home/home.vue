@@ -2,7 +2,7 @@
 	<view class="container">
 		<swiper class="swiper" :indicator-dots="true" :autoplay="true" :interval="5000" :duration="1000"
 			circular="true">
-			<swiper-item v-for="item in swiperList">
+			<swiper-item v-for="(item, index) in swiperList" :key="index">
 				<image class="swiper-item" :src="item.imgUrl" mode="" />
 			</swiper-item>
 		</swiper>
