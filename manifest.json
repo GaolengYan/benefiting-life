@@ -53,9 +53,11 @@
 		"appid": "wx39b93db3321ae166",
 		"setting": {
 			"urlCheck": false,
-			"checkSiteMap": false
+			"checkSiteMap": false,
+			"minified": true
 		},
-		"usingComponents": true
+		"usingComponents": true,
+		"lazyCodeLoading": "requiredComponents"
 	},
 	"vueVersion": "3"
 }

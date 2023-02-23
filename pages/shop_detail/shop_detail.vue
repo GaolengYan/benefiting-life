@@ -139,6 +139,5 @@
 	.shop-detail image{
 		display: block;
 		margin: 0 auto;
-
 	}
 </style>

@@ -1,13 +1,4 @@
 <template>
-	<!-- 	<view class="container">
-		<swiper class="swiper" :indicator-dots="true" :autoplay="true" :interval="5000" :duration="1000"
-			circular="true">
-			<swiper-item v-for="(item, index) in swiperList" :key="index">
-				<image class="swiper-item" :src="item.imgUrl" mode="" />
-			</swiper-item>
-		</swiper>
-	</view>
-	<my-menu class="my-menu" :menu="menuList"></my-menu> -->
 	<v-tab :data="tabs" ref="tabs"></v-tab>
 	<my-card ref="card"></my-card>
 
@@ -27,30 +18,6 @@
 					name: '出行',
 					tabId: 2
 				}]
-				// swiperList: [{
-				// 	imgUrl: "/static/banner/huiyuankaquan_banner.png",
-				// 	url: ""
-				// }, {
-				// 	imgUrl: "/static/banner/eleme_banner.png",
-				// 	url: ""
-				// }, {
-				// 	imgUrl: "/static/banner/meituan_banner.png",
-				// 	url: ""
-				// }, ],
-				// menuList: [{
-				// 	image: "/static/coupon/meituan.png",
-				// 	name: "美团",
-				// 	navigationType: 'miniProgram'
-				// }, {
-				// 	image: "/static/coupon/ele.png",
-				// 	name: "饿了么",
-				// 	navigationType: 'miniProgram'
-				// }, {
-				// 	image: "/static/all.png",
-				// 	name: "低价会员",
-				// 	url: "https://kzurl02.cn/ZTJfO",
-				// 	navigationType: 'webView'
-				// }, ]
 			};
 		},
 		methods: {
