@@ -56,24 +56,24 @@
 	export default {
 		data() {
 			return {
-				scrollTop: 0,		// 下滑距离，大于0显示置顶按钮
-				searchValue: '',	// 搜索内容
-				sourceList: [{		// 电商平台
-					name: '淘宝',
-					source: 'taobao',
-				}, {
+				scrollTop: 0, // 下滑距离，大于0显示置顶按钮
+				searchValue: '', // 搜索内容
+				sourceList: [{ // 电商平台
 					name: '拼多多',
 					source: 'pdd',
+				}, {
+					name: '淘宝',
+					source: 'taobao',
 				}, {
 					name: '京东',
 					source: 'jd',
 				}, ],
-				sourceIndex: 0,		// 当前选择电商index
-				nowSourceIndex: 0,	// 记录当前页面数据是哪个平台，每次刷新后更新
+				sourceIndex: 0, // 当前选择电商index
+				nowSourceIndex: 0, // 记录当前页面数据是哪个平台，每次刷新后更新
 				left_list: [],
 				right_list: [],
-				isLoading: false,	// 是否正在请求数据中
-				page: 1				// 当前请求页面
+				isLoading: false, // 是否正在请求数据中
+				page: 1 // 当前请求页面
 			};
 		},
 		onLoad() {
@@ -190,7 +190,9 @@
 			// 去商品详情
 			showDetail(goodsItem) {
 				uni.navigateTo({
-					url: '/pages/shop_detail/shop_detail?goodsId=' + goodsItem.goodsId + '&source=' + this.sourceList[this.nowSourceIndex].source
+					url: '/pages/shop_detail/shop_detail?goodsId=' + goodsItem.goodsId + '&shopName=' + goodsItem
+						.shopName + '&source=' + this.sourceList[this.nowSourceIndex].source + '&sourceName=' +
+						this.sourceList[this.nowSourceIndex].name
 				})
 			}
 		}

@@ -45,9 +45,9 @@
 						}
 					})
 				} else if (menuItem.navigationType == 'webView') {
-					uni.navigateTo({
-						url: '/pages/web/web?url=' + menuItem.url
-					})
+					// uni.navigateTo({
+					// 	url: '/pages/web/web?url=' + menuItem.url
+					// })
 				}
 
 			}

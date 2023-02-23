@@ -10,22 +10,27 @@
 	}, {
 		"path": "pages/other/other"
 	}, {
-		"path": "pages/web/web",
+		"path": "pages/shop_detail/shop_detail",
 		"style": {
 			"navigationBarTitleText": "",
 			"enablePullDownRefresh": false
 		}
 
-	}    ,{
-            "path" : "pages/shop_detail/shop_detail",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	}, {
+		"path": "pages/vip/vip",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
+	}, {
+		"path": "pages/shop_detail_web/shop_detail_web",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false
+		}
+
+	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "惠生活",
@@ -37,21 +42,28 @@
 	},
 	"tabBar": {
 		"list": [{
-			"pagePath": "pages/home/home",
-			"text": "首页",
-			"iconPath": "static/tabbar/home.png",
-			"selectedIconPath": "static/tabbar/home_fill.png"
-		}, {
-			"pagePath": "pages/shop/shop",
-			"text": "商城",
-			"iconPath": "static/tabbar/shopping.png",
-			"selectedIconPath": "static/tabbar/shopping_fill.png"
-		}, {
-			"pagePath": "pages/other/other",
-			"text": "我的",
-			"iconPath": "static/tabbar/user.png",
-			"selectedIconPath": "static/tabbar/user_fill.png"
-		}],
+				"pagePath": "pages/home/home",
+				"text": "首页",
+				"iconPath": "static/tabbar/home.png",
+				"selectedIconPath": "static/tabbar/home_fill.png"
+			}, {
+				"pagePath": "pages/vip/vip",
+				"text": "低价会员",
+				"iconPath": "static/tabbar/vip.png",
+				"selectedIconPath": "static/tabbar/vip_fill.png"
+			}, {
+				"pagePath": "pages/shop/shop",
+				"text": "特价商城",
+				"iconPath": "static/tabbar/shopping.png",
+				"selectedIconPath": "static/tabbar/shopping_fill.png"
+			}
+			// ,{
+			// 	"pagePath": "pages/other/other",
+			// 	"text": "我的",
+			// 	"iconPath": "static/tabbar/user.png",
+			// 	"selectedIconPath": "static/tabbar/user_fill.png"
+			// },
+		],
 		"selectedColor": "#ff5500"
 	}
 }

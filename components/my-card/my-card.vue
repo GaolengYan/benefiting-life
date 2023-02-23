@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<view data-ref="coupon" class="coupon vue-ref">
-			<block v-for="(item, index) in coupons" :key="index">
+			<view v-for="(item, index) in coupons" :key="index" v-show="tabId === 0 || item.tabId === tabId">
 				<view @click="toCoupon(index)" class="item">
 					<view class="top">
 						<view class="left">
@@ -24,7 +24,7 @@
 						<image :src="item.bannerPic" mode="widthFix"></image>
 					</view>
 				</view>
-			</block>
+			</view>
 		</view>
 	</view>
 </template>
@@ -34,6 +34,7 @@
 		name: "my-card",
 		data() {
 			return {
+				tabId: 0,
 				coupons: [{
 					"name": "美团外卖红包",
 					"bannerPic": "/static/coupon/meituan_banner.png",
@@ -83,18 +84,6 @@
 					"type": 1,
 					"needLocation": true
 				}, {
-					"name": "高德打车",
-					"bannerPic": "/static/coupon/gaode_banner.png",
-					"icon": "/static/coupon/gaode_logo.png",
-					"minapp": {
-						"appid": "wxbc0cf9b963bd3550",
-						"path": "shareActivity/basic_activity/page/BasicActivityPop/BasicActivityPop?page_id=4k1Khw5X8wy&gd_from=outside_coupon_&pid=mm_1368340106_1991850209_111340900113&relationId=2848277320"
-					},
-					"sort": 101,
-					"tabId": 3,
-					"type": 1,
-					"needLocation": true
-				}, {
 					"name": "花小猪打车",
 					"bannerPic": "/static/coupon/hxz_banner.png",
 					"icon": "/static/coupon/huaxiaozhu_logo.jpeg",
@@ -103,7 +92,7 @@
 						"path": "/pages/chitu/index?scene=KGo9oqp&source_id=62828jutuikehuaxiaozhu"
 					},
 					"sort": 101,
-					"tabId": 3,
+					"tabId": 2,
 					"type": 1,
 					"needLocation": true
 				}, {
@@ -115,11 +104,51 @@
 						"path": "/pages/index/index?scene=MvGg333&source_id=62828jutuikedidi"
 					},
 					"sort": 101,
-					"tabId": 3,
+					"tabId": 2,
 					"type": 1,
 					"needLocation": true
 				}],
 			};
+		},
+		methods: {
+			toCoupon(i) {
+				let minappId = this.coupons[i].minapp.appid
+				let minpath = this.coupons[i].minapp.path
+				if (this.coupons[i].needLocation) { // 如果是需要定位的，检测是否开启了定位
+					uni.getSystemInfoAsync({
+						success(res) {
+							if (res.locationEnabled == false) {
+								uni.showToast({
+									title: '请开启手机定位',
+									icon: 'none'
+								})
+							} else {
+								// 跳转
+								uni.navigateToMiniProgram({
+									appId: minappId,
+									path: minpath,
+									success: function success(res) {
+										// 打开成功
+									}
+								})
+							}
+						}
+					})
+				} else {
+					// 跳转
+					uni.navigateToMiniProgram({
+						appId: minappId,
+						path: minpath,
+						success: function success(res) {
+							// 打开成功
+						}
+					})
+				}
+			},
+			changeTabId(tabId) {
+				this.tabId = tabId
+				console.log(this.tabId)
+			}
 		}
 	}
 </script>

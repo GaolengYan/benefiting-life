@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<web-view :src="url"></web-view>
+		<web-view src="https://kzurl02.cn/ZTJfO"></web-view>
 	</view>
 </template>
 
@@ -8,12 +8,8 @@
 	export default {
 		data() {
 			return {
-				url:''
+				
 			};
-		},
-		onLoad: function(option) {
-			console.log(option.url)
-			this.url = option.url
 		}
 	}
 </script>
