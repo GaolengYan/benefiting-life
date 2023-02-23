@@ -47,11 +47,11 @@
 				"iconPath": "static/tabbar/home.png",
 				"selectedIconPath": "static/tabbar/home_fill.png"
 			}, {
-				"pagePath": "pages/vip/vip",
-				"text": "低价会员",
-				"iconPath": "static/tabbar/vip.png",
-				"selectedIconPath": "static/tabbar/vip_fill.png"
-			}, {
+			// 	"pagePath": "pages/vip/vip",
+			// 	"text": "低价会员",
+			// 	"iconPath": "static/tabbar/vip.png",
+			// 	"selectedIconPath": "static/tabbar/vip_fill.png"
+			// }, {
 				"pagePath": "pages/shop/shop",
 				"text": "特价商城",
 				"iconPath": "static/tabbar/shopping.png",

@@ -20,6 +20,10 @@
 				}]
 			};
 		},
+		onShareAppMessage(){
+		},
+		onShareTimeline() {
+		},
 		methods: {
 			toMovie(event) {
 				console.log(event)

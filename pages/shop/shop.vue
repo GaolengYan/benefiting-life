@@ -91,12 +91,20 @@
 		},
 		// 上拉加载
 		onReachBottom() {
+			uni.showLoading({
+				title: '数据加载中'
+			})
 			this.page = this.page + 1
 			this.getShopList()
+			
 		},
 		//监听页面滚动
 		onPageScroll(res) {
 			this.scrollTop = res.scrollTop
+		},
+		onShareAppMessage(){
+		},
+		onShareTimeline() {
 		},
 		methods: {
 			// 获取商品数据
@@ -105,9 +113,6 @@
 					return
 				}
 				this.isLoading = true
-				uni.showLoading({
-					title: '数据加载中'
-				})
 				if (this.searchValue == '') {
 					uni.request({
 						url: 'https://api.act.jutuike.com/union/jingxuan',
@@ -123,6 +128,7 @@
 							this.addResToShopList(res)
 						},
 						complete: (res) => {
+							uni.stopPullDownRefresh()
 							uni.hideLoading()
 							this.isLoading = false
 							this.nowSourceIndex = this.sourceIndex
@@ -150,6 +156,7 @@
 							this.addResToShopList(res)
 						},
 						complete: (res) => {
+							uni.stopPullDownRefresh()
 							uni.hideLoading()
 							this.isLoading = false
 							this.nowSourceIndex = this.sourceIndex

@@ -62,6 +62,10 @@
 				complete: (res) => {}
 			})
 		},
+		onShareAppMessage(){
+		},
+		onShareTimeline() {
+		},
 		methods: {
 			click() {
 				if (this.goods.we_app_info && this.goods.we_app_info.app_id != '') {
