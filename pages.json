@@ -23,13 +23,6 @@
 			"enablePullDownRefresh": false
 		}
 
-	}, {
-		"path": "pages/shop_detail_web/shop_detail_web",
-		"style": {
-			"navigationBarTitleText": "",
-			"enablePullDownRefresh": false
-		}
-
 	}],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

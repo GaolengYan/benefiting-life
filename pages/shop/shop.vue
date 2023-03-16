@@ -61,13 +61,20 @@
 				sourceList: [{ // 电商平台
 					name: '拼多多',
 					source: 'pdd',
+					discountType: 'money',
 				}, {
 					name: '淘宝',
 					source: 'taobao',
+					discountType: 'money',
 				}, {
 					name: '京东',
 					source: 'jd',
-				}, ],
+					discountType: 'money',
+				}, {
+					name: '唯品会',
+					source: 'vip',
+					discountType: 'ratio',
+				}],
 				sourceIndex: 0, // 当前选择电商index
 				nowSourceIndex: 0, // 记录当前页面数据是哪个平台，每次刷新后更新
 				left_list: [],
@@ -184,8 +191,17 @@
 			},
 			// 修改平台
 			changeSource(sourceIndex, e) {
-				this.sourceIndex = sourceIndex
 				this.closeDrawer(e)
+				if(this.sourceIndex != sourceIndex) {
+					this.sourceIndex = sourceIndex
+					uni.showLoading({
+						title: '数据加载中'
+					})
+					this.left_list = []
+					this.right_list = []
+					this.page = 1
+					this.getShopList()
+				}
 			},
 			// 回到页面顶端
 			toTop() {
@@ -199,7 +215,7 @@
 				uni.navigateTo({
 					url: '/pages/shop_detail/shop_detail?goodsId=' + goodsItem.goodsId + '&shopName=' + goodsItem
 						.shopName + '&source=' + this.sourceList[this.nowSourceIndex].source + '&sourceName=' +
-						this.sourceList[this.nowSourceIndex].name
+						this.sourceList[this.nowSourceIndex].name + '&discountType=' + this.sourceList[this.nowSourceIndex].discountType
 				})
 			}
 		}
