@@ -12,11 +12,13 @@
 							<block v-if="item.type==1">
 								<view class="text">天天可领</view>
 							</block>
-							<block v-else>
-								<block v-if="item.type==2">
-									<view class="text">限时秒杀</view>
-								</block>
+							<block v-else-if="item.type==2">
+								<view class="text">限时秒杀</view>
 							</block>
+							<block v-else-if="item.type==3">
+								<view class="text">首单优惠</view>
+							</block>
+							
 						</view>
 						<view class="right">免费领取</view>
 					</view>
@@ -48,12 +50,36 @@
 					"type": 1,
 					"needLocation": false
 				}, {
+					"name": "美团拼好饭",
+					"bannerPic": "/static/coupon/meituan_pinhaofan_banner.jpg",
+					"icon": "/static/coupon/meituan.png",
+					"minapp": {
+						"appid": "wxfd2e340553ce980d",
+						"path": "/pages/index/index?b_channel_id=558&c=2&lch=cps:waimai:9:65c5f4b9271221c79eae104d969a48a3:62828jutuikemeituan:203:85459&p=5gwoeb5zidEL&t=6"
+					},
+					"sort": 100,
+					"tabId": 1,
+					"type": 3,
+					"needLocation": true
+				}, {
 					"name": "饿了么红包",
 					"bannerPic": "/static/coupon/ele_banner.png",
 					"icon": "/static/coupon/ele.png",
 					"minapp": {
 						"appid": "wxece3a9a4c82f58c9",
-						"path": "taoke/pages/shopping-guide/index?scene=GabHMMu"
+						"path": "commercialize/pages/taoke-guide/index?scene=144c6d95f4ed4bf091f8838c0ae376b8"
+					},
+					"sort": 100,
+					"tabId": 1,
+					"type": 1,
+					"needLocation": true
+				}, {
+					"name": "饿了么红包2",
+					"bannerPic": "/static/coupon/ele_2_banner.jpg",
+					"icon": "/static/coupon/ele.png",
+					"minapp": {
+						"appid": "wxece3a9a4c82f58c9",
+						"path": "commercialize/pages/into-store-task-wt/index?scene=b70a355763dd4ddcac14b795630a0504"
 					},
 					"sort": 100,
 					"tabId": 1,
@@ -72,15 +98,15 @@
 					"type": 1,
 					"needLocation": false
 				}, {
-					"name": "饿了么生鲜",
-					"bannerPic": "/static/coupon/elemeshengxian_banner.jpeg",
-					"icon": "/static/coupon/ele.png",
+					"name": "滴滴打车",
+					"bannerPic": "/static/coupon/didi_banner.png",
+					"icon": "/static/coupon/didi_logo.jpg",
 					"minapp": {
-						"appid": "wxece3a9a4c82f58c9",
-						"path": "pages/sharePid/web/index?scene=https://s.click.ele.me/05S6wLu"
+						"appid": "wxaf35009675aa0b2a",
+						"path": "/pages/index/index?scene=MvGg333&source_id=62828jutuikedidi"
 					},
-					"sort": 100,
-					"tabId": 1,
+					"sort": 101,
+					"tabId": 2,
 					"type": 1,
 					"needLocation": true
 				}, {
@@ -90,18 +116,6 @@
 					"minapp": {
 						"appid": "wxd98a20e429ce834b",
 						"path": "/pages/chitu/index?scene=KGo9oqp&source_id=62828jutuikehuaxiaozhu"
-					},
-					"sort": 101,
-					"tabId": 2,
-					"type": 1,
-					"needLocation": true
-				}, {
-					"name": "滴滴打车",
-					"bannerPic": "/static/coupon/didi_banner.png",
-					"icon": "/static/coupon/didi_logo.jpg",
-					"minapp": {
-						"appid": "wxaf35009675aa0b2a",
-						"path": "/pages/index/index?scene=MvGg333&source_id=62828jutuikedidi"
 					},
 					"sort": 101,
 					"tabId": 2,
