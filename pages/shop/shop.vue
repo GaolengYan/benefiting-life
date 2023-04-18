@@ -53,32 +53,17 @@
 </template>
 
 <script>
+	import {config} from '@/common/config.js'
 	export default {
 		data() {
 			return {
 				scrollTop: 0, // 下滑距离，大于0显示置顶按钮
 				searchValue: '', // 搜索内容
-				sourceList: [{ // 电商平台
-					name: '拼多多',
-					source: 'pdd',
-					discountType: 'money',
-				}, {
-					name: '淘宝',
-					source: 'taobao',
-					discountType: 'money',
-				}, {
-					name: '京东',
-					source: 'jd',
-					discountType: 'money',
-				}, {
-					name: '唯品会',
-					source: 'vip',
-					discountType: 'ratio',
-				}],
+				sourceList: config.sourceList, // 电商平台
 				sourceIndex: 0, // 当前选择电商index
 				nowSourceIndex: 0, // 记录当前页面数据是哪个平台，每次刷新后更新
-				left_list: [],
-				right_list: [],
+				left_list: [],	// 用于双列结构存放左侧商品列
+				right_list: [], // 用于双列结构存放右侧商品列
 				isLoading: false, // 是否正在请求数据中
 				page: 1 // 当前请求页面
 			};
@@ -125,7 +110,7 @@
 						url: 'https://api.act.jutuike.com/union/jingxuan',
 						method: 'POST',
 						data: {
-							pub_id: '62828',
+							pub_id: config.pub_id,
 							source: this.sourceList[this.sourceIndex].source,
 							type: '1',
 							page: this.page,
@@ -152,8 +137,8 @@
 						url: "https://api.act.jutuike.com/union/search",
 						method: 'POST',
 						data: {
-							pub_id: '62828',
-							sid: '62828',
+							pub_id: config.pub_id,
+							sid: config.pub_id,
 							keyword: this.searchValue,
 							source: this.sourceList[this.sourceIndex].source,
 							page: this.page,

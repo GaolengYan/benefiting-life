@@ -36,6 +36,7 @@
 </template>
 
 <script>
+	import {config} from '@/common/config.js'
 	export default {
 		data() {
 			return {
@@ -53,9 +54,9 @@
 				url: "https://api.act.jutuike.com/union/convert",
 				method: 'POST',
 				data: {
-					pub_id: '62828',
+					pub_id: config.pub_id,
 					goodsId: options.goodsId,
-					sid: '62828',
+					sid: config.pub_id,
 					source: options.source
 				},
 				success: (res) => {

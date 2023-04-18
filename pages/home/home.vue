@@ -1,23 +1,14 @@
 <template>
 	<v-tab :data="tabs" ref="tabs"></v-tab>
 	<my-card ref="card"></my-card>
-
 </template>
 
 <script>
+	import {config} from '@/common/config.js'
 	export default {
 		data() {
 			return {
-				tabs: [{
-					name: '全部',
-					tabId: 0
-				},{
-					name: '外卖',
-					tabId: 1
-				}, {
-					name: '出行',
-					tabId: 2
-				}]
+				tabs: config.tabs
 			};
 		},
 		onShareAppMessage(){
@@ -25,16 +16,6 @@
 		onShareTimeline() {
 		},
 		methods: {
-			toMovie(event) {
-				console.log(event)
-				uni.navigateToMiniProgram({
-					appId: 'wx89752980e795bfde',
-					path: '/pages/movie/cinemas?pub_id=62828&sid=xiaochengxu&source=jutuike',
-					success(res) {
-						console.log(res)
-					}
-				})
-			},
 			changeTab(tabItem) {
 				this.$refs.card.changeTabId(tabItem.tabId)
 			}
