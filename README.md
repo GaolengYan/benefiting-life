@@ -16,7 +16,7 @@ HBuilderX下载地址: [HBuilderX](https://www.dcloud.io/hbuilderx.html)
 微信开发者工具下载地址: [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)  
 ##### 2. 注册聚推客联盟账号，便于获取cps活动
 推荐微信扫描下面的二维码进行注册：  
-![聚推客注册码](static/聚推客注册码3.png)
+![聚推客注册码](static/聚推客注册码4.png)
 ##### 3. 注册微信小程序
 微信小程序注册地址：[微信小程序注册](https://mp.weixin.qq.com/wxopen/waregister?action=step1)  
 由于我们的小程序不涉及支付，所以选择个人小程序即可。  
